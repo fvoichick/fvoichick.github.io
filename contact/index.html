@@ -32,7 +32,8 @@
   <meta property="og:site_name" content="Finn Voichick">
   <meta property="twitter:card" content="summary">
   <meta property="twitter:title" content="Finn Voichick">
-  <meta property="twitter:description" content="Finn Voichick is a BS/MS student and researcher at Washington University in St. Louis studying computer science and mathematics.">
+  <meta property="twitter:description"
+        content="Finn Voichick is a BS/MS student and researcher at Washington University in St. Louis studying computer science and mathematics.">
   <meta property="twitter:image" content="https://finn.voichick.com/resources/og-image.png">
   <meta property="twitter:image:alt" content="Finn Voichick">
 </head>
@@ -40,7 +41,8 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">Finn</a>
+    <a class="navbar-brand" href="/" data-toggle="tooltip" data-placement="bottom"
+       title="Home">Finn</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -48,10 +50,14 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav">
         <li class="nav-item active">
-          <a class="nav-link" href="/contact/">Contact</a>
+          <a class="nav-link" href="/contact/" data-toggle="tooltip" data-placement="bottom"
+             title="Contact Finn">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+          <a class="nav-link" href="/resume.pdf" target="_blank" data-toggle="tooltip"
+             data-placement="bottom" title="Finn's r&eacute;sum&eacute;">
+            R&eacute;sum&eacute;
+          </a>
         </li>
       </ul>
     </div>
@@ -64,11 +70,14 @@
   <address>
     <strong>Finn Voichick</strong><br>
     6105 Delmar Blvd, Apt. 802<abbr class="initialism">c</abbr><br>
-    St. Louis, <abbr title="Missouri" class="initialism">mo</abbr> 63112<br>
-    <a href="mailto:fvoichick@wustl.edu">fvoichick@wustl.edu</a><br>
-    <abbr title="Phone">P:</abbr> (608) 698-4988<br>
-    LinkedIn: <a href="//www.linkedin.com/in/finn-voichick/">finn-voichick</a><br>
-    Facebook: <a href="//www.facebook.com/finn.voichick">finn.voichick</a>
+    St. Louis, <abbr title="Missouri" class="initialism" data-toggle="tooltip">mo</abbr> 63112<br>
+    <a href="mailto:fvoichick@wustl.edu" data-toggle="tooltip" data-placement="right"
+       title="Finn's WashU email address">fvoichick@wustl.edu</a><br>
+    <abbr data-toggle="tooltip" data-placement="left" title="Phone">P:</abbr> (608) 698-4988<br>
+    LinkedIn: <a href="//www.linkedin.com/in/finn-voichick/" data-toggle="tooltip"
+                 data-placement="right" title="Finn's LinkedIn profile">finn-voichick</a><br>
+    Facebook: <a href="//www.facebook.com/finn.voichick" data-toggle="tooltip"
+                 data-placement="right" title="Finn's Facebook profile">finn.voichick</a>
   </address>
 </div>
 
@@ -81,5 +90,6 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="/script.js"></script>
 </body>
 </html>

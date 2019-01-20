@@ -32,7 +32,8 @@
   <meta property="og:site_name" content="Finn Voichick">
   <meta property="twitter:card" content="summary">
   <meta property="twitter:title" content="Finn Voichick">
-  <meta property="twitter:description" content="Finn Voichick is a BS/MS student and researcher at Washington University in St. Louis studying computer science and mathematics.">
+  <meta property="twitter:description"
+        content="Finn Voichick is a BS/MS student and researcher at Washington University in St. Louis studying computer science and mathematics.">
   <meta property="twitter:image" content="https://finn.voichick.com/resources/og-image.png">
   <meta property="twitter:image:alt" content="Finn Voichick">
 </head>
@@ -40,7 +41,8 @@
 
 <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
   <div class="container">
-    <a class="navbar-brand" href="/">Finn</a>
+    <a class="navbar-brand" href="/" data-toggle="tooltip" data-placement="bottom"
+       title="Home">Finn</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
             aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -48,10 +50,14 @@
     <div class="collapse navbar-collapse" id="navbarText">
       <ul class="navbar-nav">
         <li class="nav-item">
-          <a class="nav-link" href="/contact/">Contact</a>
+          <a class="nav-link" href="/contact/" data-toggle="tooltip" data-placement="bottom"
+             title="Contact Finn">Contact</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/resume.pdf" target="_blank">R&eacute;sum&eacute;</a>
+          <a class="nav-link" href="/resume.pdf" target="_blank" data-toggle="tooltip"
+             data-placement="bottom" title="Finn's r&eacute;sum&eacute;">
+            R&eacute;sum&eacute;
+          </a>
         </li>
       </ul>
     </div>
@@ -62,7 +68,8 @@
   <h1 class="display-2 mt-3">Finn Voichick</h1>
   <p class="lead">
     Hello! I'm Finn, and this is my homepage. I'm a computer science student at Washington
-    University in St. Louis. Here are some things I've been working on:
+    University in St. Louis. Here are some things I've been working on, in roughly chronological
+    order:
   </p>
   <div class="card-columns">
     <section class="card">
@@ -72,12 +79,15 @@
         <p class="card-text">
           In high school, I was head of programming for my robotics team,
           Badger<abbr class="initialism">Bots</abbr>
-          <abbr title="FIRST Robotics Competition" class="initialism">Frc</abbr> Team 1306. In my
-          senior year, our robot, Nautilus, made it to semifinals in our division. Our code (for
-          which I was the lead developer) is open source.
+          <abbr title="FIRST Robotics Competition" class="initialism"
+                data-toggle="tooltip">Frc</abbr> Team 1306. In my senior year, our robot, Nautilus,
+          made it to semifinals in our division. Our code (for which I was the lead developer) is
+          open source.
         </p>
-        <a href="//github.com/team1306/Robot2016" class="card-link">Source code</a>
-        <a href="//youtu.be/RLSu2d1SirQ" class="card-link">Video</a>
+        <a href="//github.com/team1306/Robot2016" class="card-link" data-toggle="tooltip"
+           data-placement="bottom" title="Nautilus source code">Source code</a>
+        <a href="//youtu.be/RLSu2d1SirQ" class="card-link" data-toggle="tooltip"
+           data-placement="bottom" title="Video of Nautilus in action">Video</a>
       </div>
     </section>
     <section class="card">
@@ -86,19 +96,22 @@
       <div class="card-body">
         <h5 class="card-title">University</h5>
         <p class="card-text">
-          At <abbr title="Washington University in St. Louis">WashU</abbr>, I'm in the joint
-          <abbr title="Bachelor of Science" class="initialism">B.S.</abbr>/<abbr
-            title="Master of Science" class="initialism">M.S.</abbr> program, so I'm currently
-          pursuing two degrees:
+          At <abbr title="Washington University" data-toggle="tooltip">WashU</abbr>,
+          I'm in the joint
+          <abbr title="Bachelor of Science" class="initialism"
+                data-toggle="tooltip">B.S.</abbr>/<abbr
+            title="Master of Science" class="initialism" data-toggle="tooltip">M.S.</abbr> program,
+          so I'm currently pursuing two degrees:
         </p>
         <ul>
           <li>
-            A <abbr title="Bachelor of Science" class="initialism">B.S.</abbr> in computer science
-            with a second major in mathematics and a minor in philosophy-neuroscience-psychology
+            A <abbr title="Bachelor of Science" class="initialism" data-toggle="tooltip">B.S.</abbr>
+            in computer science with a second major in mathematics and a minor in
+            philosophy-neuroscience-psychology
           </li>
           <li>
-            An <abbr title="Master of Science" class="initialism">M.S.</abbr> in computer science
-            with a certificate in data mining and machine learning
+            An <abbr title="Master of Science" class="initialism" data-toggle="tooltip">M.S.</abbr>
+            in computer science with a certificate in data mining and machine learning
           </li>
         </ul>
         <p class="card-text">
@@ -114,12 +127,15 @@
         <p class="card-text">
           I am on the executive board for Studio
           <abbr title="Teaching Engineering to St. Louis Adolescents"
-                class="initialism">Tesla</abbr>, a student-run WashU volunteering group that sets up
+                class="initialism" data-toggle="tooltip">Tesla</abbr>, a student-run WashU
+          volunteering group that sets up
           after-school <abbr class="initialism">stem</abbr> clubs in local middle schools. As the
           head of the Enrichment team, I'm in charge of our curriculum development.
         </p>
-        <a href="//www.studio-tesla.org" class="card-link">
-          <abbr class="initialism">Tesla</abbr> website
+        <a href="//www.studio-tesla.org" class="card-link" data-toggle="tooltip"
+           data-placement="bottom" data-html="true"
+           title="<abbr class=initialism>Tesla</abbr>&#8217;s website">
+          Website
         </a>
       </div>
     </section>
@@ -132,7 +148,10 @@
           <abbr title="Artificial Intelligence" class="initialism">ai</abbr> programming competition
           for high school and college students. This competition ran from May to September 2018.
         </p>
-        <a href="//bitbrawl.org/" class="card-link">BitBrawl website</a>
+        <a href="//bitbrawl.org/" class="card-link" data-toggle="tooltip" data-placement="bottom"
+           title="BitBrawl&#8217;s website">
+          Website
+        </a>
       </div>
     </section>
     <section class="card">
@@ -143,17 +162,18 @@
         </h5>
         <p class="card-text">
           I am Head Teaching Assistant for
-          <abbr title="Computer Science and Engineering" class="initialism">cse</abbr>
+          <abbr title="Computer Science and Engineering" class="initialism" data-toggle="tooltip">cse</abbr>
           231<abbr class="initialism">s</abbr>: Introduction to Parallel and
           Concurrent Programming. This has involved course organization, designing assignments, and
           substitute lecturing.
         </p>
-        <a href="//bulletin.wustl.edu/search/?P=E81%20CSE%20231S" class="card-link">
+        <a href="//bulletin.wustl.edu/search/?P=E81%20CSE%20231S" class="card-link"
+           data-toggle="tooltip" data-placement="bottom" title="231 course description">
           About this class
         </a>
         <a href="//classes.engineering.wustl.edu/cse231/core/index.php?title=Main_Page"
-           class="card-link">
-          Course wiki
+           class="card-link" data-toggle="tooltip" data-placement="bottom" title="231 course wiki">
+          Wiki
         </a>
       </div>
     </section>
@@ -162,7 +182,7 @@
            alt="Human-Computer Interaction Institute"/>
       <div class="card-body">
         <h5 class="card-title">
-          <abbr title="Carnegie Mellon University" class="initialism">Cmu</abbr> Research
+          <abbr title="Carnegie Mellon University" class="initialism" data-toggle="tooltip">Cmu</abbr> Research
         </h5>
         <p class="card-text">
           In the summer of 2018, I was a research assistant at the Human-Computer Interaction
@@ -172,15 +192,15 @@
           created
           <abbr
               title="Autocomplete Letting Apache Beam Applications Succeed Through Exploration Rapidly"
-              class="initialism">Alabaster</abbr>, a PyCharm plugin designed to improve
+              class="initialism" data-toggle="tooltip">Alabaster</abbr>, a PyCharm plugin designed to improve
           discoverability when using Beam.
           After the summer, I coauthored a paper that has been submitted to
           <abbr
               title="Conference on Human Factors in Computing Systems"
-              class="initialism">Chi</abbr> Late-Breaking Work.
+              class="initialism" data-toggle="tooltip">Chi</abbr> Late-Breaking Work.
         </p>
-        <a href="/poster.pdf" class="card-link" target="_blank">Research poster</a>
-        <a href="//github.com/fvoichick/alabaster/wiki" class="card-link" target="_blank">
+        <a href="/poster.pdf" class="card-link" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Poster presented at session">Research poster</a>
+        <a href="//github.com/fvoichick/alabaster/wiki" class="card-link" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Source code and info">
           <abbr class="initialism">Alabaster</abbr> wiki
         </a>
       </div>
@@ -190,7 +210,7 @@
            alt="Washington University in St. Louis">
       <div class="card-body">
         <h5 class="card-title">
-          <abbr title="Washington University in St. Louis">WashU</abbr> Research
+          <abbr title="Washington University" data-toggle="tooltip">WashU</abbr> Research
         </h5>
         <p class="card-text">
           At Washington University, I'm currently working as a research assistant in the department
@@ -211,5 +231,6 @@
 <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
+<script src="script.js"></script>
 </body>
 </html>
