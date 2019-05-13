@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet"
+        href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous">
+  <link rel="stylesheet" href="/style.css?v=3">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+  <link rel="manifest" href="/site.webmanifest">
+  <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#2b5797">
+  <meta name="msapplication-TileColor" content="#2b5797">
+  <meta name="theme-color" content="#2b5797">
+  <title>The Wikipedia Game &middot; Finn Voichick &middot; Computer science student and
+    researcher</title>
+  <meta property="og:title" content="The Wikipedia Game">
+  <meta property="og:type" content="website">
+  <meta property="og:image" content="https://finn.voichick.com/resources/og-image.png">
+  <meta property="og:url" content="https://finn.voichick.com/game/">
+  <meta property="og:description"
+        content="Find the shortest link between two Wikipedia pages.">
+  <meta property="og:image:type" content="image/png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="1200">
+  <meta property="og:image:alt" content="Finn Voichick">
+  <meta property="og:site_name" content="Finn Voichick">
+  <meta property="twitter:card" content="summary">
+  <meta property="twitter:title" content="The Wikipedia Game">
+  <meta property="twitter:description"
+        content="Find the shortest link between two Wikipedia pages.">
+  <meta property="twitter:image" content="https://finn.voichick.com/resources/og-image.png">
+  <meta property="twitter:image:alt" content="Finn Voichick">
+</head>
+<body>
+
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="/" data-toggle="tooltip" data-placement="bottom"
+       title="Home">Finn</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText"
+            aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarText">
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/contact/" data-toggle="tooltip" data-placement="bottom"
+             title="Contact Finn">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/resume.pdf" target="_blank" data-toggle="tooltip"
+             data-placement="bottom" title="Finn's r&eacute;sum&eacute;">
+            R&eacute;sum&eacute;
+          </a>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="/game/" data-toggle="tooltip" data-placement="bottom"
+             title="A Game">Game</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="display-2 mt-3">A Game</h1>
+  <p class="lead">
+    This program plays a game inspired by
+    <a href="//smbc-comics.com/comic/2009-09-30">an <abbr class="initialism">Smbc</abbr> comic</a>.
+    Enter the names of two Wikipedia pages, and it will find ways to get from one to the other in
+    the fewest clicks.
+  </p>
+  <div class="card mb-3">
+    <div class="card-body">
+      <form id="form">
+        <div class="form-group">
+          <label for="start-page">Start page</label>
+          <input id="start-page" type="text" class="form-control text-monospace">
+        </div>
+        <div class="form-group">
+          <label for="target-page">Target page</label>
+          <input id="target-page" type="text" class="form-control text-monospace">
+        </div>
+        <button type="submit" class="btn btn-primary">Search</button>
+      </form>
+    </div>
+  </div>
+  <div id="error" class="alert alert-danger" role="alert" hidden></div>
+  <div id="current-div" class="form-group" hidden>
+    <label for="current">Checking page</label>
+    <input id="current" type="text" class="form-control text-monospace" disabled>
+  </div>
+  <h2 id="click-count" hidden>
+    <code id="result-start" class="text-monospace"></code> is
+    <span id="at-least" hidden>at least </span><span id="num-clicks"></span>
+    click<span id="click-plural" hidden>s</span> away from
+    <code id="result-end" class="text-monospace"></code>
+  </h2>
+  <div id="result">
+
+  </div>
+</div>
+
+<script src="//code.jquery.com/jquery-3.4.1.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+<script src="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+<script src="script.js"></script>
+</body>
+</html>

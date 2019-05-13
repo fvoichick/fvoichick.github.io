@@ -10,3 +10,10 @@
   text-transform: none;
   font-variant: small-caps;
 }
+
+code, .text-monospace {
+  font-variant-numeric: initial;
+  -moz-font-feature-settings: initial;
+  -webkit-font-feature-settings: initial;
+  font-feature-settings: initial;
+}
