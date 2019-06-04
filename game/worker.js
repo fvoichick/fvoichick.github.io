@@ -1,9 +1,10 @@
 function bfs(start, goal) {
   function bfs(starts, closed, cameFrom, numClicks) {
+    shuffle(starts);
     const nextStarts = new Set();
     for (const origin of starts) {
-      const links = getLinks(origin);
       postMessage({type: "page", page: origin});
+      const links = getLinks(origin);
       for (const link of links) {
         if (closed.has(link)) {
           continue;
@@ -24,7 +25,7 @@ function bfs(start, goal) {
     } else if (nextStarts.size === 0) {
       throw "no path";
     } else {
-      postMessage({type: "numClicks", numClicks: numClicks + 2})
+      postMessage({type: "numClicks", numClicks: numClicks + 2});
       return bfs(Array.from(nextStarts), newClosed, cameFrom, numClicks + 1);
     }
   }
@@ -71,6 +72,14 @@ function getLinks(page) {
   } else {
     throw "HTTP status is " + xhttp.status;
   }
+}
+
+// https://stackoverflow.com/a/12646864
+function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
 }
 
 onmessage = function (e) {
