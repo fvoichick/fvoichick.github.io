@@ -1,19 +1,23 @@
 function bfs(start, goal) {
-  function bfs(starts, closed, cameFrom, numClicks) {
-    shuffle(starts);
+  function bfs(starts, closed, cameFrom, pathCounts, numClicks) {
     const nextStarts = new Set();
     for (const origin of starts) {
       postMessage({type: "page", page: origin});
+      console.log([origin, pathCounts.get(origin)]);
       const links = getLinks(origin);
       for (const link of links) {
         if (closed.has(link)) {
           continue;
         }
-        if (!nextStarts.has(link)) {
-          nextStarts.add(link);
-          cameFrom.set(link, []);
+        nextStarts.add(link);
+        const cameFromList = cameFrom.get(link);
+        if (cameFromList === undefined) {
+          cameFrom.set(link, [origin]);
+          pathCounts.set(link, pathCounts.get(origin))
+        } else {
+          cameFrom.get(link).push(origin);
+          pathCounts.set(link, pathCounts.get(link) + pathCounts.get(origin))
         }
-        cameFrom.get(link).push(origin);
         if (link === goal) {
           pathFound(cameFrom, goal);
         }
@@ -26,11 +30,14 @@ function bfs(start, goal) {
       throw "no path";
     } else {
       postMessage({type: "numClicks", numClicks: numClicks + 2});
-      return bfs(Array.from(nextStarts), newClosed, cameFrom, numClicks + 1);
+      const nextStartsArr = Array.from(nextStarts);
+      shuffle(nextStartsArr);
+      const sorted = nextStartsArr.sort((a, b) => pathCounts.get(b) - pathCounts.get(a));
+      return bfs(sorted, newClosed, cameFrom, pathCounts, numClicks + 1);
     }
   }
 
-  return bfs([start], new Set([start]), new Map([[start, []]]), 0);
+  return bfs([start], new Set([start]), new Map([[start, []]]), new Map([[start, 1]]), 0);
 }
 
 function path(cameFrom, goal) {
@@ -76,10 +83,10 @@ function getLinks(page) {
 
 // https://stackoverflow.com/a/12646864
 function shuffle(array) {
-    for (let i = array.length - 1; i > 0; i--) {
-        const j = Math.floor(Math.random() * (i + 1));
-        [array[i], array[j]] = [array[j], array[i]];
-    }
+  for (let i = array.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
 }
 
 onmessage = function (e) {
