@@ -27,7 +27,8 @@ function onSubmit(event) {
   const currentDiv = $("#current-div");
   currentDiv.attr("hidden", true);
   $("#click-count").attr("hidden", true);
-  $("#progress-bars").attr("hidden", true);
+  const progressArea = $("#progress-bars");
+  progressArea.attr("hidden", true).empty();
   const origin = $("#start-page").val();
   const target = $("#target-page").val();
   const promises = [resolveRedirects(origin), resolveRedirects(target)];
@@ -57,6 +58,7 @@ function onSubmit(event) {
           resultDiv.textContent = "";
           resultDiv.appendChild(htmlFromPath(data.path, updatedOrigin));
           currentDiv.attr("hidden", true);
+          progressArea.attr("hidden", true);
           return;
         case "page":
           const page = data.page;
@@ -92,7 +94,7 @@ function onSubmit(event) {
               const progress = data.progress;
               const bar = progBars[barIndex];
               $(bar).attr("style", "width: " + progress + "%").attr("aria-valuenow", progress);
-              $("#progress-bars").removeAttr("hidden");
+              progressArea.removeAttr("hidden");
             }
           }
           currentDiv.removeAttr("hidden");
