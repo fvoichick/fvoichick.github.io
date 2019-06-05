@@ -14,6 +14,7 @@ $(() => {
 });
 
 let worker = null;
+
 function onSubmit(event) {
   if (worker !== null) {
     worker.terminate();
@@ -26,6 +27,7 @@ function onSubmit(event) {
   const currentDiv = $("#current-div");
   currentDiv.attr("hidden", true);
   $("#click-count").attr("hidden", true);
+  $("#progress-bars").attr("hidden", true);
   const origin = $("#start-page").val();
   const target = $("#target-page").val();
   const promises = [resolveRedirects(origin), resolveRedirects(target)];
@@ -37,9 +39,12 @@ function onSubmit(event) {
     $("#result-start").text(updatedOrigin);
     $("#at-least").removeAttr("hidden");
     $("#num-clicks").text("1");
+    $("#num-clicks-prev").text("0");
     $("#click-plural").attr("hidden", true);
+    $("#click-prev-plural").removeAttr("hidden");
     $("#result-end").text(updatedTarget);
     $("#click-count").removeAttr("hidden");
+    const progBars = [];
     worker.onmessage = e => {
       const data = e.data;
       switch (data.type) {
@@ -54,12 +59,45 @@ function onSubmit(event) {
           currentDiv.attr("hidden", true);
           return;
         case "page":
-          $("#current").val(data.page);
+          const page = data.page;
+          const currentText = page === null ? "" : data.page;
+          $("#current").val(currentText);
+          const numClicks = data.numClicks;
+          $("#num-clicks").text(numClicks);
+          $("#num-clicks-prev").text(numClicks - 1);
+          if (numClicks === 2) {
+            $("#click-prev-plural").attr("hidden", true);
+          } else {
+            $("#click-prev-plural").removeAttr("hidden");
+          }
+          if (numClicks !== 1) {
+            $("#click-plural").removeAttr("hidden");
+            if (numClicks >= 2) {
+              const barIndex = numClicks - 2;
+              if (barIndex >= progBars.length) {
+                const progDiv = document.createElement("div");
+                progDiv.classList.add("progress", "mb-2");
+                const progBar = document.createElement("div");
+                progBar.classList.add("progress-bar", "progress-bar-striped", "progress-bar-animated");
+                $(progBar).attr("role", "progressbar").attr("aria-valuemin", 0).attr("aria-valuemax");
+                progDiv.appendChild(progBar);
+                document.getElementById("progress-bars").appendChild(progDiv);
+                progBars.push(progBar)
+              }
+              for (let i = 0; i < progBars.length - 1; i++) {
+                const oldBar = progBars[i];
+                oldBar.classList.remove("progress-bar-animated");
+                $(oldBar).attr("style", "width: 100%").attr("aria-valuenow", 100);
+              }
+              const progress = data.progress;
+              const bar = progBars[barIndex];
+              $(bar).attr("style", "width: " + progress + "%").attr("aria-valuenow", progress);
+              $("#progress-bars").removeAttr("hidden");
+            }
+          }
           currentDiv.removeAttr("hidden");
           return;
         case "numClicks":
-          $("#num-clicks").text(data.numClicks);
-          $("#click-plural").removeAttr("hidden");
           return;
       }
     };

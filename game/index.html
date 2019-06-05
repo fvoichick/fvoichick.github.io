@@ -90,18 +90,22 @@
     </div>
   </div>
   <div id="error" class="alert alert-danger" role="alert" hidden></div>
-  <div id="current-div" class="form-group" hidden>
-    <label for="current">Checking page</label>
-    <input id="current" type="text" class="form-control text-monospace" disabled>
-  </div>
   <h2 id="click-count" hidden>
     <code id="result-start" class="text-monospace"></code> is
     <span id="at-least" hidden>at least </span><span id="num-clicks"></span>
     click<span id="click-plural" hidden>s</span> away from
     <code id="result-end" class="text-monospace"></code>
   </h2>
+  <div id="current-div" class="form-group" hidden>
+    <label for="current">Checking page</label>
+    <input id="current" type="text" class="form-control text-monospace" aria-describedby="current-help" disabled>
+    <small id="current-help" class="form-text text-muted">
+      The algorithm is currently checking pages that are <span id="num-clicks-prev"></span>
+      click<span id="click-prev-plural" hidden>s</span> away.
+    </small>
+  </div>
+  <div id="progress-bars" hidden></div>
   <div id="result">
-
   </div>
 </div>
 

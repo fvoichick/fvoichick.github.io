@@ -1,8 +1,9 @@
 function bfs(start, goal) {
   function bfs(starts, closed, cameFrom, pathCounts, numClicks) {
     const nextStarts = new Set();
-    for (const origin of starts) {
-      postMessage({type: "page", page: origin});
+    const totalOrigins = starts.length;
+    for (const [index, origin] of starts.entries()) {
+      postMessage({type: "page", page: origin, numClicks: numClicks + 1, progress: index * 100 / totalOrigins});
       console.log([origin, pathCounts.get(origin)]);
       const links = getLinks(origin);
       for (const link of links) {
@@ -29,7 +30,7 @@ function bfs(start, goal) {
     } else if (nextStarts.size === 0) {
       throw "no path";
     } else {
-      postMessage({type: "numClicks", numClicks: numClicks + 2});
+      postMessage({type: "page", page: null, numClicks: numClicks + 2, progress: 0});
       const nextStartsArr = Array.from(nextStarts);
       shuffle(nextStartsArr);
       const sorted = nextStartsArr.sort((a, b) => pathCounts.get(b) - pathCounts.get(a));
