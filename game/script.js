@@ -45,6 +45,7 @@ function onSubmit(event) {
     $("#click-prev-plural").removeAttr("hidden");
     $("#result-end").text(updatedTarget);
     $("#hint-target").text(updatedTarget);
+    $("#hint-start").text(updatedOrigin);
     $("#click-count").removeAttr("hidden");
     const progBars = [];
     worker.onmessage = e => {
