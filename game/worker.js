@@ -4,7 +4,6 @@ function bfs(start, goal) {
     const totalOrigins = starts.length;
     for (const [index, origin] of starts.entries()) {
       postMessage({type: "page", page: origin, numClicks: numClicks + 1, progress: index * 100 / totalOrigins});
-      console.log([origin, pathCounts.get(origin)]);
       const links = getLinks(origin);
       for (const link of links) {
         if (closed.has(link)) {
