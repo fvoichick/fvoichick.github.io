@@ -5,8 +5,8 @@
 	<meta name="viewport"
 	      content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet"
-	      href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-	      integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+	      href="//stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+	      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
 	      crossorigin="anonymous">
 	<link rel="stylesheet" href="/style.css?v=3">
 	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -101,43 +101,131 @@
 	<h1 class="display-2 mt-3">Finn Voichick</h1>
 	<p class="lead">
 		Hello! I'm Finn, and this is my homepage. I'm a computer science student at
-		Washington University in St. Louis. Here are some things I've been working
-		on, in roughly chronological order:
+		Washington University in St. Louis, with research interests in
+		human-computer interaction and quantum computing. Here are some things I've
+		been working on:
 	</p>
-	<div class="card-columns">
+	<h2>Current Research</h2>
+	<section class="card">
+		<div class="card-body">
+			<div class="row">
+				<div class="col-md-4 col-lg-2">
+					<img class="card-img-top"
+					     src="/resources/wash-u-2.png"
+					     alt="Washington University in St. Louis">
+				</div>
+				<div class="col-md-8 col-lg-10">
+					<h5 class="card-title">
+						Washington University in St. Louis
+					</h5>
+					<p class="card-text">
+						At
+						<abbr title="Washington University in St. Louis"
+						      data-toggle="tooltip">
+							WashU
+						</abbr>,
+						I'm currently working as a research
+						assistant in the department of computer science and engineering. I'm
+						working with Dr. Caitlin Kelleher to develop a model of
+						<abbr class="initialism"
+						      title="Application Programming Interface"
+						      data-toggle="tooltip">
+							api
+						</abbr>
+						learning.
+						This has involved building a logging system, designing a study with
+						human subjects, and building an interface for manually labelling
+						logged data.
+					</p>
+					<a href="//doi.org/10.1109/VLHCC.2019.8818795"
+					   class="card-link"
+					   target="_blank"
+					   data-toggle="tooltip"
+					   data-placement="bottom"
+					   title="Towards Validation of a Model of API Learning">
+						<abbr class="initialism">Vl/Hcc</abbr> poster
+					</a>
+				</div>
+			</div>
+		</div>
+	</section>
+	<h2>Previous Research</h2>
+	<div class="card-deck mb-3">
 		<section class="card">
-			<img class="card-img-top" src="/resources/nautilus.jpg" alt="Nautilus"/>
+			<img class="card-img-top"
+			     src="/resources/color-viz.png"
+			     alt="a colorful cone">
 			<div class="card-body">
-				<h5 class="card-title">High School</h5>
+				<h5 class="card-title">
+					<abbr title="University of Maryland"
+					      data-toggle="tooltip"
+					      class="initialism">
+						Umd</abbr>
+					Research
+				</h5>
 				<p class="card-text">
-					In high school, I was head of programming for my robotics team,
-					Badger<abbr class="initialism">Bots</abbr>
-					<abbr title="FIRST Robotics Competition"
-					      class="initialism"
-					      data-toggle="tooltip">
-						Frc
-					</abbr>
-					Team 1306. In my senior year, our robot, Nautilus, made it to
-					semifinals in our division at the world championship. Our code (for
-					which I was the lead
-					developer) is open source.
+					In the summer of 2019, I worked as a research assistant in the Joint
+					Center for Quantum Information and Computer Science at the University
+					of Maryland. There, I worked on implementing, visualizing, and
+					improving Haah's algorithm for quantum signal processing
+					decomposition.
 				</p>
-				<a href="//github.com/team1306/Robot2016"
-				   class="card-link"
-				   data-toggle="tooltip"
-				   data-placement="bottom"
-				   title="Nautilus source code">
-					Source code
-				</a>
-				<a href="//youtu.be/RLSu2d1SirQ"
-				   class="card-link"
-				   data-toggle="tooltip"
-				   data-placement="bottom"
-				   title="Video of Nautilus in action">
-					Video
+				<a href="//arxiv.org/abs/1806.10236" class="card-link" target="_blank"
+				   data-toggle="tooltip" data-placement="bottom"
+				   title="Haah's original paper">
+					Haah's algorithm
 				</a>
 			</div>
 		</section>
+		<section class="card">
+			<img class="card-img-top"
+			     src="/resources/hcii.png"
+			     alt="Human-Computer Interaction Institute"/>
+			<div class="card-body">
+				<h5 class="card-title">
+					<abbr
+							title="Carnegie Mellon University"
+							class="initialism"
+							data-toggle="tooltip">
+						Cmu</abbr>
+					Research
+				</h5>
+				<p class="card-text">
+					In the summer of 2018, I was a research assistant at the
+					Human-Computer Interaction Institute of Carnegie Mellon University,
+					working with Dr. Brad Myers. I studied
+					<abbr title="Application Programming Interface"
+					      class="initialism"
+					      data-toggle="tooltip">
+						api
+					</abbr>
+					usability, focusing on discoverability of
+					<abbr class="initialism">api</abbr> elements and the involvement of
+					mental models in <abbr class="initialism">api</abbr> design, leading
+					to two publications.
+				</p>
+				<a href="//doi.org/10.1145/3290607.3312897"
+				   class="card-link"
+				   target="_blank"
+				   data-toggle="tooltip"
+				   data-placement="bottom"
+				   data-html="true"
+				   title="Methods for Investigating Mental Models for Learners of <span class='initialism'>API</span>s">
+					<abbr class="initialism">Chi</abbr> poster
+				</a>
+				<a href="//doi.org/10.1109/VLHCC.2019.8818681"
+				   class="card-link"
+				   target="_blank"
+				   data-toggle="tooltip"
+				   data-placement="bottom"
+				   title="The Long Tail: Understanding the Discoverability of API Functionality">
+					<abbr class="initialism">Vl/Hcc</abbr> paper
+				</a>
+			</div>
+		</section>
+	</div>
+	<h2>Other Work</h2>
+	<div class="card-columns">
 		<section class="card">
 			<img class="card-img-top"
 			     src="/resources/wash-u.png"
@@ -166,7 +254,8 @@
 						<abbr title="Bachelor of Science"
 						      class="initialism"
 						      data-toggle="tooltip">
-							B.S.</abbr>
+							B.S.
+						</abbr>
 						in computer science with a second major in mathematics and a minor
 						in philosophy-neuroscience-psychology
 					</li>
@@ -183,6 +272,42 @@
 				<p class="card-text">
 					I expect to complete both of these after four years, in spring 2020.
 				</p>
+			</div>
+		</section>
+		<section class="card">
+			<img class="card-img-top"
+			     src="/resources/butterfly-network.png"
+			     alt="butterfly network"/>
+			<div class="card-body">
+				<h5 class="card-title">
+					<abbr class="initialism">Cse</abbr>
+					231<abbr class="initialism">s</abbr>
+				</h5>
+				<p class="card-text">
+					I am Head Teaching Assistant for
+					<abbr title="Computer Science and Engineering"
+					      class="initialism"
+					      data-toggle="tooltip">
+						cse</abbr>
+					231<abbr class="initialism">s</abbr>: Introduction to Parallel and
+					Concurrent Programming. This has involved course organization,
+					designing assignments, and
+					substitute lecturing.
+				</p>
+				<a href="http://bulletin.wustl.edu/search/?P=E81%20CSE%20231S"
+				   class="card-link"
+				   data-toggle="tooltip"
+				   data-placement="bottom"
+				   title="231 course description">
+					About this class
+				</a>
+				<a href="//classes.engineering.wustl.edu/cse231/core/index.php?title=Main_Page"
+				   class="card-link"
+				   data-toggle="tooltip"
+				   data-placement="bottom"
+				   title="231 course wiki">
+					Wiki
+				</a>
 			</div>
 		</section>
 		<section class="card">
@@ -237,146 +362,43 @@
 			</div>
 		</section>
 		<section class="card">
-			<img class="card-img-top"
-			     src="/resources/butterfly-network.png"
-			     alt="butterfly network"/>
+			<img class="card-img-top" src="/resources/nautilus.jpg" alt="Nautilus"/>
 			<div class="card-body">
-				<h5 class="card-title">
-					<abbr class="initialism">Cse</abbr>
-					231<abbr class="initialism">s</abbr>
-				</h5>
+				<h5 class="card-title">High School</h5>
 				<p class="card-text">
-					I am Head Teaching Assistant for
-					<abbr title="Computer Science and Engineering"
+					In high school, I was head of programming for my robotics team,
+					Badger<abbr class="initialism">Bots</abbr>
+					<abbr title="FIRST Robotics Competition"
 					      class="initialism"
 					      data-toggle="tooltip">
-						cse</abbr>
-					231<abbr class="initialism">s</abbr>: Introduction to Parallel and
-					Concurrent Programming. This has involved course organization,
-					designing assignments, and
-					substitute lecturing.
+						Frc
+					</abbr>
+					Team 1306. In my senior year, our robot, Nautilus, made it to
+					semifinals in our division at the world championship. Our code (for
+					which I was the lead
+					developer) is open source.
 				</p>
-				<a href="http://bulletin.wustl.edu/search/?P=E81%20CSE%20231S"
+				<a href="//github.com/team1306/Robot2016"
 				   class="card-link"
 				   data-toggle="tooltip"
 				   data-placement="bottom"
-				   title="231 course description">
-					About this class
+				   title="Nautilus source code">
+					Source code
 				</a>
-				<a href="//classes.engineering.wustl.edu/cse231/core/index.php?title=Main_Page"
+				<a href="//youtu.be/RLSu2d1SirQ"
 				   class="card-link"
 				   data-toggle="tooltip"
 				   data-placement="bottom"
-				   title="231 course wiki">
-					Wiki
-				</a>
-			</div>
-		</section>
-		<section class="card">
-			<img class="card-img-top"
-			     src="/resources/hcii.png"
-			     alt="Human-Computer Interaction Institute"/>
-			<div class="card-body">
-				<h5 class="card-title">
-					<abbr
-							title="Carnegie Mellon University"
-							class="initialism"
-							data-toggle="tooltip">
-						Cmu</abbr>
-					Research
-				</h5>
-				<p class="card-text">
-					In the summer of 2018, I was a research assistant at the
-					Human-Computer Interaction Institute of Carnegie Mellon University,
-					working with Dr. Brad Myers. I studied
-					<abbr title="Application Programming Interface"
-					      class="initialism"
-					      data-toggle="tooltip">
-						api</abbr>
-					usability, focusing on discoverability of
-					<abbr class="initialism">api</abbr> elements and the involvement of
-					mental models in <abbr class="initialism">api</abbr> design, leading
-					to two publications.
-				</p>
-				<a href="//doi.org/10.1145/3290607.3312897"
-				   class="card-link"
-				   target="_blank"
-				   data-toggle="tooltip"
-				   data-placement="bottom"
-				   data-html="true"
-				   title="Methods for Investigating Mental Models for Learners of <span class='initialism'>API</span>s">
-					<abbr class="initialism">Chi</abbr> poster
-				</a>
-				<a href="//doi.org/10.1109/VLHCC.2019.8818681"
-				   class="card-link"
-				   target="_blank"
-				   data-toggle="tooltip"
-				   data-placement="bottom"
-				   title="The Long Tail: Understanding the Discoverability of API Functionality">
-					<abbr class="initialism">Vl/Hcc</abbr> paper
-				</a>
-			</div>
-		</section>
-		<section class="card">
-			<img class="card-img-top"
-			     src="/resources/wash-u-2.png"
-			     alt="Washington University in St. Louis">
-			<div class="card-body">
-				<h5 class="card-title">
-					<abbr title="Washington University" data-toggle="tooltip">WashU</abbr>
-					Research
-				</h5>
-				<p class="card-text">
-					At Washington University, I'm currently working as a research
-					assistant in the department of computer science and engineering. I'm
-					working with Dr. Caitlin Kelleher to develop a model of
-					<abbr class="initialism"
-					      title="Application Programming Interface"
-					      data-toggle="tooltip">
-						api</abbr>
-					learning.
-				</p>
-				<a href="//doi.org/10.1109/VLHCC.2019.8818795"
-				   class="card-link"
-				   target="_blank"
-				   data-toggle="tooltip"
-				   data-placement="bottom"
-				   title="Towards Validation of a Model of API Learning">
-					<abbr class="initialism">Vl/Hcc</abbr> poster
-				</a>
-			</div>
-		</section>
-		<section class="card">
-			<img class="card-img-top"
-			     src="/resources/color-viz.png"
-			     alt="a colorful cone">
-			<div class="card-body">
-				<h5 class="card-title">
-					<abbr title="University of Maryland"
-					      data-toggle="tooltip"
-					      class="initialism">
-						Umd</abbr>
-					Research
-				</h5>
-				<p class="card-text">
-					In the summer of 2019, I worked as a research assistant in the Joint
-					Center for Quantum Information and Computer Science at the University
-					of Maryland. There, I worked on implementing, visualizing, and
-					improving Haah's algorithm for quantum signal processing
-					decomposition.
-				</p>
-				<a href="//arxiv.org/abs/1806.10236" class="card-link" target="_blank"
-				   data-toggle="tooltip" data-placement="bottom"
-				   title="Haah's original paper">
-					Haah's algorithm
+				   title="Video of Nautilus in action">
+					Video
 				</a>
 			</div>
 		</section>
 	</div>
 </div>
 
-<script src="//code.jquery.com/jquery-3.2.1.slim.min.js"
-        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+<script src="//code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
         crossorigin="anonymous"></script>
 <script
 		src="//cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
